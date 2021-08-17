@@ -14,8 +14,9 @@ public class Solution {
                     result = hs.Count;
 
                 hs.Clear();
-                i = s.IndexOf(c, index);
-                index = i + 1;
+                index = s.IndexOf(c, index) + 1;                    
+                int len = s.IndexOf(c, index) - index + 1;
+                hs = new HashSet<char>(s.Substring(index, len));
             }
         }
         if (hs.Count > result)
